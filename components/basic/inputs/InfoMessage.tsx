@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { HStack, StackProps, Text } from "@chakra-ui/layout";
-import { CircleAlertIcon } from "components/icons/";
+import { CircleAlertIcon } from "components/basic/icons/";
 
 export type InfoMessageStatus = "success" | "warning" | "error" | "info";
 
