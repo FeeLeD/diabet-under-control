@@ -1,8 +1,8 @@
-diabet-under-control:
+Frontend project diabet-under-control:
 
-NestJS
-TypeScript
-Chakra-UI
-Axios
+- NestJS
+- TypeScript
+- Chakra-UI
+- Axios
 
-Designed by Daniil Popov
+Interfaces are designed by Daniil Popov
