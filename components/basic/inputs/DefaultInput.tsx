@@ -7,8 +7,10 @@ import {
   InputRightElement,
 } from "@chakra-ui/input";
 import { Box, Center } from "@chakra-ui/layout";
-import InfoMessage, { InfoMessageStatus } from "components/inputs/InfoMessage";
-import FormLabel from "components/inputs/FormLabel";
+import InfoMessage, {
+  InfoMessageStatus,
+} from "components/basic/inputs/InfoMessage";
+import FormLabel from "components/basic/inputs/FormLabel";
 
 const DISABLED_OPACITY = 0.6;
 
