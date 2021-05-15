@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { Center, Box, VStack, Flex, HStack, Text } from "@chakra-ui/react";
-import { UserIcon, LockIcon } from "components/icons";
-import { DefaultInput } from "components/inputs/";
+import { UserIcon, LockIcon } from "components/basic/icons";
+import { DefaultInput } from "components/basic/inputs/";
 import LoginButton from "./LoginButton";
 import Logo from "./Logo";
 
