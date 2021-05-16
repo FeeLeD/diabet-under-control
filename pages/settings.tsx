@@ -1,11 +1,8 @@
-import React, { FC } from 'react'
+import React, { FC } from "react";
+import SettingsPage from "components/SettingsPage";
 
 const Settings: FC = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <SettingsPage />;
+};
 
-export default Settings
+export default Settings;

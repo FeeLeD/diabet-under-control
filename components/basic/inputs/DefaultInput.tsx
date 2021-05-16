@@ -18,6 +18,7 @@ interface Props extends InputProps {
   leftElement?: JSX.Element;
   rightElement?: JSX.Element;
   label?: string;
+  isRequired?: boolean;
   infoMessage?: {
     message: string;
     status?: InfoMessageStatus;
@@ -30,6 +31,7 @@ const DefaultInput = React.forwardRef(
       leftElement,
       rightElement,
       label,
+      isRequired = false,
       isDisabled,
       infoMessage,
       ...props
@@ -41,7 +43,7 @@ const DefaultInput = React.forwardRef(
         {label && (
           <FormLabel
             ml="22px"
-            isRequired={true}
+            isRequired={isRequired}
             opacity={isDisabled ? DISABLED_OPACITY : 1}
           >
             {label}
@@ -67,7 +69,7 @@ const DefaultInput = React.forwardRef(
 
           <Input
             ref={ref}
-            w='100%'
+            w="100%"
             height="48px"
             bg="neutral.50"
             border="none"

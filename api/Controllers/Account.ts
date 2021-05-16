@@ -1,12 +1,18 @@
 import { PREFIX } from "api";
 import Controller from "api/Controller";
-import { AccontRegisterDto, AccountLoginDto, UserDto } from "api/DTOs/Account";
+import {
+  AccontRegisterDto,
+  AccountLoginDto,
+  UpdateUserDto,
+  UserDto,
+} from "api/DTOs/Account";
 
 export interface IAccount {
   login: (loginDto: AccountLoginDto) => Promise<void>;
   logout: () => Promise<void>;
   register: (retisterDto: AccontRegisterDto) => Promise<void>;
   getUser: () => Promise<UserDto>;
+  updateUser: (updateDto: UpdateUserDto) => Promise<void>;
 }
 
 export default class AccountController extends Controller implements IAccount {
@@ -33,5 +39,13 @@ export default class AccountController extends Controller implements IAccount {
     );
 
     return user;
+  }
+
+  async updateUser(updateDto: UpdateUserDto) {
+    await this.put<void, UpdateUserDto>(
+      // `/api/account`
+      `${PREFIX}/account/1`,
+      updateDto
+    );
   }
 }

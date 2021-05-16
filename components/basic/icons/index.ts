@@ -13,6 +13,7 @@ import StableIcon from "./StableIcon";
 import FallIcon from "./FallIcon";
 import RiseIcon from "./RiseIcon";
 import SettingsIcon from "./SettingsIcon";
+import CalendarIcon from "./CalendarIcon";
 
 export {
   PlusIcon,
@@ -30,4 +31,5 @@ export {
   FallIcon,
   RiseIcon,
   SettingsIcon,
+  CalendarIcon,
 };

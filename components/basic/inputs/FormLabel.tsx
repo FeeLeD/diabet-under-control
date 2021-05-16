@@ -8,7 +8,8 @@ interface Props extends StackProps {
 const FormLabel: FC<Props> = ({ isRequired, children, ...props }) => {
   return (
     <HStack spacing={0} {...props}>
-      <Text>{children}</Text>;{isRequired && <Text color="red.60">*</Text>}
+      <Text opacity={0.6}>{children}</Text>
+      {isRequired && <Text color="red.60">*</Text>}
     </HStack>
   );
 };
