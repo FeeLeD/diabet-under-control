@@ -1,6 +1,8 @@
 import React, { FC, useState } from "react";
+import { v1 as uuidv1 } from "uuid";
 import { api } from "api";
 import { useApiWithoutResponse } from "hooks/useApi";
+import { useGlobalState } from "hooks/useGlobalState";
 import { badToast, successToastCreator, warnToastCreator } from "utils/toasts";
 import { Modal, ModalOverlay, ModalContent, useToast } from "@chakra-ui/react";
 import { Box, HStack, Grid } from "@chakra-ui/layout";
@@ -37,6 +39,7 @@ const AddMeasurementModal: FC<Props> = ({
 }) => {
   const toast = useToast();
   const [stepNumber, setStepNumber] = useState(0);
+  const { measurements } = useGlobalState();
   const isLastStep = stepNumber === NUMBER_OF_STEPS - 1;
   const switchToNextStep = () => setStepNumber(stepNumber + 1);
   const switchToPreviousStep = () => setStepNumber(stepNumber - 1);
@@ -53,7 +56,14 @@ const AddMeasurementModal: FC<Props> = ({
 
       // GET SITE ID
       await createMeasurement({ siteId: 0, ...getAllValues() });
-
+      measurements.set((measurements) => [
+        ...measurements,
+        {
+          id: uuidv1(),
+          date: new Date(),
+          ...getAllValues(),
+        },
+      ]);
       setStepNumber(0);
       toast(successToastCreator("Запись добавлена!"));
       onClose();

@@ -12,6 +12,7 @@ import EatIcon from "./EatIcon";
 import StableIcon from "./StableIcon";
 import FallIcon from "./FallIcon";
 import RiseIcon from "./RiseIcon";
+import SettingsIcon from "./SettingsIcon";
 
 export {
   PlusIcon,
@@ -28,4 +29,5 @@ export {
   StableIcon,
   FallIcon,
   RiseIcon,
+  SettingsIcon,
 };

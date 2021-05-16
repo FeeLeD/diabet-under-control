@@ -25,7 +25,7 @@ export interface MeasurementDeleteDto {
 }
 
 export interface MeasurementDto {
-  id: number;
+  id: number | string;
   glucoseValue?: number;
   breadValue?: number;
   shortInsulinValue?: number;

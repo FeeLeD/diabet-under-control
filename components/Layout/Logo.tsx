@@ -3,16 +3,21 @@ import { Box, Text } from "@chakra-ui/layout";
 import { VStack } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/image";
 
-const Logo: FC = () => {
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const Logo: FC<Props> = ({ title = "", description = "" }) => {
   return (
     <Box>
       <Image w="100px" src="/logo.png" mx="auto" transform="rotate(90deg)" />
 
-      <VStack mt="45px" spacing="12px">
+      <VStack mt="25px" spacing="12px">
         <Text fontSize="h1" fontWeight="bold">
-          Добрый день!
+          {title}
         </Text>
-        <Text color="neutral.70">Введите свою почту и пароль, чтобы войти</Text>
+        <Text color="neutral.70">{description}</Text>
       </VStack>
     </Box>
   );

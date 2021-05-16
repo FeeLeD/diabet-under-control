@@ -31,7 +31,8 @@ const LeftMenuItem: FC<Props> = ({ isActive, IconElement, path, children }) => {
       spacing="40px"
       color="ink.50"
       tabIndex={1}
-      _hover={{ cursor: "pointer", opacity: 0.6 }}
+      opacity={isActive ? 1 : 0.6}
+      _hover={{ cursor: "pointer", opacity: 1 }}
       onClick={() => router.push(path)}
       onKeyPress={(e) => e.key === "Enter" && router.push(path)}
       {...(isActive && activeStyles)}

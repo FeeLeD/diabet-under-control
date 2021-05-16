@@ -1,6 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { api } from "api";
-import { useApi } from "hooks/useApi";
+import { useApiWithoutResponse } from "hooks/useApi";
+import { useGlobalState } from "hooks/useGlobalState";
 import { Box, HStack, Spinner, Stack, Text } from "@chakra-ui/react";
 import MeasurementCard from "./MeasurementCard";
 import StatsBlock from "./StatsBlock";
@@ -10,17 +11,26 @@ interface Props {
 }
 
 const MeasurementsBlock: FC<Props> = ({ date }) => {
-  const [measurements, loading, getMeasurements] = useApi(
+  const { measurements } = useGlobalState();
+  const [loading, getMeasurements] = useApiWithoutResponse(
     api.measurements.getMeasurements
   );
 
   useEffect(() => {
-    getMeasurements("");
+    loadMeasurements();
   }, [date]);
+
+  const loadMeasurements = async () => {
+    const newMeasurements = await getMeasurements("");
+
+    if (newMeasurements) {
+      measurements.set(newMeasurements);
+    }
+  };
 
   return (
     <Box>
-      <StatsBlock measurements={measurements} />
+      <StatsBlock measurements={measurements.get()} />
 
       <Stack spacing="24px">
         {loading ? (
@@ -28,21 +38,20 @@ const MeasurementsBlock: FC<Props> = ({ date }) => {
             <Spinner thickness="3px" color="blue.50" />
             <Text>Загрузка...</Text>
           </HStack>
-        ) : (
-          measurements &&
-          (measurements.length > 0 ? (
-            measurements.map((measurement, i) => (
+        ) : measurements.get().length > 0 ? (
+          measurements
+            .get()
+            .map((measurement, i) => (
               <MeasurementCard
                 key={measurement.id}
                 measurement={measurement}
                 previosGlucoseValue={
-                  i > 0 ? measurements[i - 1].glucoseValue : undefined
+                  i > 0 ? measurements.get()[i - 1].glucoseValue : undefined
                 }
               />
             ))
-          ) : (
-            <Text textAlign="center">Данные отсутствуют</Text>
-          ))
+        ) : (
+          <Text textAlign="center">Данные отсутствуют</Text>
         )}
       </Stack>
     </Box>

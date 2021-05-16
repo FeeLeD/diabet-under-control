@@ -2,10 +2,15 @@ import React, { FC } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { Flex, HStack, Box, Text } from "@chakra-ui/react";
-import { WritingIcon, GraphIcon, EatIcon } from "components/basic/icons";
+import {
+  WritingIcon,
+  GraphIcon,
+  EatIcon,
+  SettingsIcon,
+} from "components/basic/icons";
 import LeftMenuItem from "components/Layout/LeftMenuItem";
 
-const menu = [
+const MAIN_MENU = [
   {
     icon: WritingIcon,
     title: "Записи",
@@ -20,6 +25,19 @@ const menu = [
     icon: EatIcon,
     title: "Еда",
     path: "/food",
+  },
+];
+
+const BOTTOM_MENU = [
+  {
+    icon: SettingsIcon,
+    title: "Настройки",
+    path: "/settings",
+  },
+  {
+    icon: WritingIcon,
+    title: "Выйти из аккаунта",
+    path: "/logout",
   },
 ];
 
@@ -50,7 +68,7 @@ const LeftMenu: FC = () => {
       </HStack>
 
       <Box mt="55px">
-        {menu.map((item) => (
+        {MAIN_MENU.map((item) => (
           <LeftMenuItem
             key={item.title}
             IconElement={item.icon}
@@ -63,9 +81,17 @@ const LeftMenu: FC = () => {
       </Box>
 
       <Flex flexGrow={1} align="flex-end">
-        <Box>
-          {/* <LeftMenuItem IconElement={WritingIcon}>Настройка</LeftMenuItem> */}
-          {/* <LeftMenuItem IconElement={GraphIcon}>Выйти из аккаунта</LeftMenuItem> */}
+        <Box w="100%">
+          {BOTTOM_MENU.map((item) => (
+            <LeftMenuItem
+              key={item.title}
+              IconElement={item.icon}
+              path={item.path}
+              isActive={router.pathname.includes(item.path)}
+            >
+              {item.title}
+            </LeftMenuItem>
+          ))}
         </Box>
       </Flex>
     </Flex>
