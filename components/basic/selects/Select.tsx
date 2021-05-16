@@ -11,21 +11,23 @@ import { ChevronDownIcon } from "components/basic/icons/";
 import { MainButton } from "components/basic/buttons";
 
 interface Props {
+  defaultMenuItem?: string;
   menuItems: string[];
-  menuButtonText: string;
+  menuButtonText?: string;
   menuButtonProps?: ButtonProps;
   menuListProps?: MenuListProps;
   onItemChange?: (item: string) => void;
 }
 
 const Select: FC<Props> = ({
+  defaultMenuItem,
   menuItems,
   menuButtonText = "",
   menuButtonProps,
   menuListProps,
   onItemChange = () => {},
 }) => {
-  const [chosenItem, setChosenItem] = useState("");
+  const [chosenItem, setChosenItem] = useState(defaultMenuItem ?? "");
 
   const onMenuItemClick = (item: string) => {
     setChosenItem(item);

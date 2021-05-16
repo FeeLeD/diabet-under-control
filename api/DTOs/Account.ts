@@ -18,3 +18,9 @@ export interface UserDto {
   otherName?: string;
   email: string;
 }
+
+export interface UpdateUserDto {
+  firstName: string;
+  lastName: string;
+  otherName?: string;
+}
