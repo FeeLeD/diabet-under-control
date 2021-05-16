@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from "react";
 import { useRouter } from "next/router";
-import Layout from "components/Layout";
 
 const HomePage: FC = () => {
   const router = useRouter();
@@ -9,7 +8,7 @@ const HomePage: FC = () => {
     router.push("/measurements");
   }, []);
 
-  return <Layout></Layout>;
+  return <></>;
 };
 
 export default HomePage;

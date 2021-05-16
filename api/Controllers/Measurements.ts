@@ -1,4 +1,5 @@
 import Controller from "api/Controller";
+import { PREFIX } from "api";
 import {
   MeasurementCreateDto,
   MeasurementCreateWithSiteIdDto,
@@ -15,8 +16,6 @@ export interface IMeasurements {
   deleteMeasurement: (data: MeasurementDeleteDto) => Promise<void>;
   getMeasurements: () => Promise<MeasurementDto[]>;
 }
-
-const PREFIX = "https://609d39d704bffa001792e3b5.mockapi.io/api/dev";
 
 export default class MeasurementsController
   extends Controller

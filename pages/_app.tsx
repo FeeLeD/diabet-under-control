@@ -1,6 +1,6 @@
 import { FC } from "react";
 import type { AppProps } from "next/app";
-import { Box, ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider } from "@chakra-ui/react";
 import theme from "theme/index";
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {

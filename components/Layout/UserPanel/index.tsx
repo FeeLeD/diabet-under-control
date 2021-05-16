@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { useGlobalState } from "hooks/useGlobalState";
 import { HStack, Text, useDisclosure } from "@chakra-ui/react";
 import { FilledButton } from "components/basic/buttons";
 import { PlusIcon } from "components/basic/icons";
@@ -10,6 +11,7 @@ const UserPanel: FC = () => {
     onClose: closeModal,
     onOpen: openModal,
   } = useDisclosure();
+  const { user } = useGlobalState();
 
   const measurementModal = (
     <AddMeasurementModal isOpen={isModalOpened} onClose={closeModal} />
@@ -17,7 +19,7 @@ const UserPanel: FC = () => {
 
   return (
     <HStack w="100%" justify="space-between" fontSize="h1" fontWeight="bold">
-      <Text>Привет, Данила</Text>
+      <Text>Привет, {user.get()?.firstName}</Text>
 
       <HStack spacing="16px">
         <Text color="blue.50">Добавить запись</Text>

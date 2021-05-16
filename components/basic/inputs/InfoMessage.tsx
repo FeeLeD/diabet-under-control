@@ -20,7 +20,7 @@ const InfoMessage: FC<Props> = ({ status = "info", children, ...props }) => {
         return { bgColor: "green.30", fontColor: "#53A282" }; // green.70
       case "warning":
         return { bgColor: "yellow.30", fontColor: "#E9CA2F" }; // yellow.60
-      case "success":
+      case "error":
         return { bgColor: "red.30", fontColor: "#F53224" }; // red.60
       default:
         return { bgColor: "blue.30", fontColor: "#384EBC" }; // blue.70
