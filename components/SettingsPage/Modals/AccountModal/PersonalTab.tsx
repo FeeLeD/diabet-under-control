@@ -4,7 +4,7 @@ import {
   Box,
   Grid,
   InputRightElement,
-  useToast,
+  useToast
 } from "@chakra-ui/react";
 import { DefaultInput } from "components/basic/inputs";
 import { Select } from "components/basic/selects";
@@ -28,8 +28,6 @@ const PersonalTab: FC = () => {
     api.profile.updateProfile
   );
 
-  console.log(profile.get()?.birthDate);
-
   const onApply = async () => {
     try {
       const newProfile: ProfileUpdateDto = {
@@ -38,7 +36,7 @@ const PersonalTab: FC = () => {
         birthDate: birthInputRef.current?.value,
         mass: massInputRef.current?.value
           ? parseFloat(massInputRef.current.value)
-          : undefined,
+          : undefined
       };
 
       await updateProfile(newProfile);
@@ -56,7 +54,7 @@ const PersonalTab: FC = () => {
     <TabWrapper
       applyProps={{
         onClick: onApply,
-        isLoading: loading,
+        isLoading: loading
       }}
     >
       <Box>
@@ -88,7 +86,7 @@ const PersonalTab: FC = () => {
           menuButtonProps={{
             w: "343px",
             h: "48px",
-            borderRadius: "20px",
+            borderRadius: "20px"
           }}
           menuListProps={{ w: "343px", zIndex: 10 }}
         />

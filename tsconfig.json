@@ -1,25 +1,26 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": {
+    "target": "es5", // Стандарт JavaScript, в котором будет выпущен код
+    "lib": ["dom", "dom.iterable", "esnext"], // список API, включенных в проект
+    "allowJs": true, // разрешение импорта JavaScript файлов без указания формата .js
+    "skipLibCheck": true, // пропуск проверки типа файлов декларации
+    "strict": true, // использование широкого диапазона проверок типов
+    "forceConsistentCasingInFileNames": true, // чувствительность к регистру названия файлов
+    "noEmit": true, // не создавать файлы компилятора, такие как исходный код JavaScript и другие
+    "esModuleInterop": true, 
+    "module": "esnext", // модульная система
+    "moduleResolution": "node", // стратегия разборки модуля
+    "resolveJsonModule": true, // позволяет импортировать модули с расширением .json
+    "isolatedModules": true, // предупреждения, если в код не может быть правильно интерпретирован
+                            // в процессе однофайловой транспиляции.
+    "jsx": "preserve", // управление тем, как конструкции JSX создаются в файлах JavaScript
+    "baseUrl": ".", // базовый каталог для разрешения неабсолютных имен модулей
+    "paths": { // записи, которые повторно отображают импорт в места поиска относительно baseUrl
       "components/*": ["components/*"],
       "interfaces/*": ["interfaces/*"],
       "theme/*": ["theme/*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Layout/UserPanel"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "components/Layout/UserPanel"], // включенные моудли
+  "exclude": ["node_modules"] // исключенные модули
 }

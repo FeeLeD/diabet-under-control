@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { Box, SimpleGrid } from "@chakra-ui/react";
 import MeasurementsBlock from "./MeasurementsBlock";
+import Graph from "components/graphs/Graph";
 import Layout from "components/Layout";
 import DatePicker from "./DatePicker";
 
@@ -22,8 +23,9 @@ const MeasurementsPage: FC = () => {
             bg="neutral.40"
             borderRadius="8px"
             p={4}
+            overflow="hidden"
           >
-            Графики
+            <Graph />
           </Box>
         </Box>
       </SimpleGrid>

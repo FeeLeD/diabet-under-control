@@ -2,6 +2,12 @@
   "name": "diabet-under-control",
   "version": "0.1.0",
   "private": true,
+  "prettier": {
+    "trailingComma": "none",
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": false
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

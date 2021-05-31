@@ -24,7 +24,7 @@ const GeneralTab = () => {
             ...oldUser,
             firstName,
             lastName,
-            otherName,
+            otherName
           }
       );
 
@@ -39,21 +39,21 @@ const GeneralTab = () => {
       applyProps={{
         onClick: onApply,
         isLoading: loading,
-        isDisabled: !firstName || !lastName,
+        isDisabled: !firstName || !lastName
       }}
     >
       <DefaultInput
         w="343px"
         label="Фамилия"
-        value={firstName}
-        onChange={(e) => setFirstName(e.currentTarget.value)}
+        value={lastName}
+        onChange={(e) => setLastName(e.currentTarget.value)}
         isRequired={true}
       />
       <DefaultInput
         w="343px"
         label="Имя"
-        value={lastName}
-        onChange={(e) => setLastName(e.currentTarget.value)}
+        value={firstName}
+        onChange={(e) => setFirstName(e.currentTarget.value)}
         isRequired={true}
       />
       <DefaultInput
