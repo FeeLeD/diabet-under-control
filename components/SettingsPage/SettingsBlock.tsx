@@ -14,28 +14,28 @@ const SettingsBlock: FC = () => {
     {
       title: "Настройки аккаунта",
       description: "Изменить данные аккаунта",
-      onClick: account.onOpen,
+      onClick: account.onOpen
     },
     {
       title: "Расчет инсулина",
       description: "Изменить коэффициенты",
-      onClick: account.onOpen,
+      onClick: account.onOpen
     },
     {
       title: "Типы измерений",
       description: "Редактировать названия типов",
-      onClick: account.onOpen,
+      onClick: account.onOpen
     },
     {
       title: "Настройки оповещений",
       description: "Выбрать время оповещений",
-      onClick: account.onOpen,
+      onClick: account.onOpen
     },
     {
       title: "Экспортировать данные",
       description: "Определить настройки экспорта",
-      onClick: account.onOpen,
-    },
+      onClick: account.onOpen
+    }
   ];
 
   const accountModal = (

@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { IconProps } from "interfaces/icons";
 
-const FallIcon: FC<IconProps> = ({
+const ChevronUpIcon: FC<IconProps> = ({
   width = 24,
   height = 24,
   color = "#252525"
@@ -15,7 +15,7 @@ const FallIcon: FC<IconProps> = ({
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M19 19V10M19 19H10M19 19L6 6"
+        d="M6 15L12 9L18 15"
         stroke={color}
         strokeWidth="2"
         strokeLinecap="round"
@@ -25,4 +25,4 @@ const FallIcon: FC<IconProps> = ({
   );
 };
 
-export default FallIcon;
+export default ChevronUpIcon;

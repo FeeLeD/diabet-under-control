@@ -1,8 +1,12 @@
 import React, { FC } from "react";
 import { Button, ButtonProps } from "@chakra-ui/react";
 import withButtonStyles, {
-  WithButtonStyleProps,
+  WithButtonStyleProps
 } from "components/HOCs/withButtonStyles";
+
+const EmptyButton: FC<ButtonProps> = ({ children, ...props }) => {
+  return <Button {...props}>{children}</Button>;
+};
 
 const DefaultButton = React.forwardRef(
   (
@@ -16,10 +20,6 @@ const DefaultButton = React.forwardRef(
     );
   }
 );
-
-const EmptyButton: FC<ButtonProps> = ({ children, ...props }) => {
-  return <Button {...props}>{children}</Button>;
-};
 
 const MainButton = withButtonStyles(DefaultButton, "main", "large");
 const MediumMainButton = withButtonStyles(DefaultButton, "main", "medium");
@@ -43,5 +43,5 @@ export {
   SmallFilledButton,
   GhostButton,
   MediumGhostButton,
-  SmallGhostButton,
+  SmallGhostButton
 };
