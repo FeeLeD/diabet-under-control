@@ -1,4 +1,5 @@
 import React, { FC } from "react";
+import { gradients } from "utils/gradients";
 import { Text, VStack } from "@chakra-ui/react";
 
 interface Props {
@@ -6,21 +7,13 @@ interface Props {
   value: number;
 }
 
-const COLORS = {
-  purple: "linear-gradient(134.51deg, #7745AF -23.9%, #8973D3 118.18%)",
-  blue: "linear-gradient(65.88deg, #6A9ADD 0%, #4E7ACA 100%)",
-  green: "linear-gradient(65.88deg, #53A282 0.01%, #68B186 100%)",
-  orange: "linear-gradient(135deg, #F56224 -17.26%, #F58824 118.19%)",
-  red: "linear-gradient(65.88deg, #F53224 0%, #E8630C 100%)",
-};
-
 const StatCard: FC<Props> = ({ status, value }) => {
   const bg = React.useMemo(() => {
-    if (value < 2.1) return COLORS.purple;
-    else if (value < 4) return COLORS.blue;
-    else if (value < 7.3) return COLORS.green;
-    else if (value < 10.1) return COLORS.orange;
-    else return COLORS.red;
+    if (value < 2.1) return gradients.purple;
+    else if (value < 4) return gradients.blue;
+    else if (value < 7.3) return gradients.green;
+    else if (value < 10.1) return gradients.orange;
+    else return gradients.red;
   }, [value]);
 
   return (

@@ -5,7 +5,6 @@ import { Box, BoxProps, Center, HStack, Text } from "@chakra-ui/layout";
 const Graph: FC = () => {
   const { measurements } = useGlobalState();
 
-  // const levels = [2.4, 5.5, 7.1, 8.1];
   const levels = [3.3, 5.5, 10];
   const MAX_VALUE = 10;
 
@@ -101,18 +100,3 @@ const Line: FC<BoxProps & { value: number }> = ({ value, ...props }) => {
 };
 
 export default Graph;
-
-{
-  /* <Grid
-  key={i}
-  w="16px"
-  h="100%"
-  gridTemplateRows={`repeat(${numberOfSteps}, auto)`}
->
-  <Line
-    gridRow={`${numberOfSteps + 1 - measurement.glucoseValue * 10} / ${
-      numberOfSteps + 1
-    }`}
-  />
-</Grid>; */
-}
