@@ -54,7 +54,6 @@ const BarChart: FC<Props> = ({
           bottom="0"
           w="100%"
           h={`calc(200% / ${numberOfSteps} * ${zone * MULTIPLIER})`}
-          zIndex="-1"
         >
           <Text w="25px" textAlign="end" fontSize="p" color="ink.40">
             {zone}

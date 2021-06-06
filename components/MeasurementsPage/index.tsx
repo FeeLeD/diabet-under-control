@@ -46,7 +46,6 @@ const MeasurementsPage: FC = () => {
                 chartGradients.red
               ]}
             />
-            {/* <Graph /> */}
           </Box>
         </Box>
       </SimpleGrid>
